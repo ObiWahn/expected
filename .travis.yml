@@ -1,6 +1,6 @@
 language: cpp
 
-dist: xenial
+dist: bionic
 
 matrix:
   include:
@@ -11,7 +11,7 @@ matrix:
              - ubuntu-toolchain-r-test
           packages:
              - g++-5
-      env: COMPILER=g++-5 CXXSTD=11  
+      env: COMPILER=g++-5 CXXSTD=11
     - compiler: gcc
       addons:
         apt:
@@ -37,6 +37,7 @@ matrix:
              - g++-8
       env: COMPILER=g++-8 CXXSTD=11
     - compiler: gcc
+      if: branch =~ /all/
       addons:
         apt:
           sources:
@@ -53,6 +54,7 @@ matrix:
              - g++-4.8
       env: COMPILER=g++-4.8 CXXSTD=11
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
@@ -63,6 +65,7 @@ matrix:
              - libc++-dev
       env: COMPILER=clang++-3.5 CXXSTD=11
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
@@ -73,6 +76,7 @@ matrix:
              - libc++-dev
       env: COMPILER=clang++-3.6 CXXSTD=11
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
@@ -83,10 +87,11 @@ matrix:
              - libc++-dev
       env: COMPILER=clang++-3.7 CXXSTD=11
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
-            - sourceline: "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-3.8 main"
+            - sourceline: "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-3.8 main"
               key_url: "http://apt.llvm.org/llvm-snapshot.gpg.key"
             - ubuntu-toolchain-r-test
           packages:
@@ -94,10 +99,11 @@ matrix:
              - libc++-dev
       env: COMPILER=clang++-3.8 CXXSTD=11
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
-            - sourceline: "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-3.9 main"
+            - sourceline: "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-3.9 main"
               key_url: "http://apt.llvm.org/llvm-snapshot.gpg.key"
             - ubuntu-toolchain-r-test
           packages:
@@ -105,35 +111,38 @@ matrix:
             - libc++-dev
       env: COMPILER=clang++-3.9 CXXSTD=11
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
-             - llvm-toolchain-xenial-4.0
+             - llvm-toolchain-bionic-4.0
              - ubuntu-toolchain-r-test
           packages:
              - clang++-4.0
              - libc++-dev
       env: COMPILER=clang++-4.0 CXXSTD=11
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
-             - llvm-toolchain-xenial-5.0
+             - llvm-toolchain-bionic-5.0
              - ubuntu-toolchain-r-test
           packages:
              - clang++-5.0
              - libc++-dev
-      env: COMPILER=clang++-5.0 CXXSTD=11             
+      env: COMPILER=clang++-5.0 CXXSTD=11
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
-             - llvm-toolchain-xenial-6.0
+             - llvm-toolchain-bionic-6.0
              - ubuntu-toolchain-r-test
           packages:
              - clang++-6.0
              - libc++-dev
-      env: COMPILER=clang++-6.0 CXXSTD=11             
+      env: COMPILER=clang++-6.0 CXXSTD=11
 
     - compiler: gcc
       addons:
@@ -166,8 +175,9 @@ matrix:
              - ubuntu-toolchain-r-test
           packages:
              - g++-8
-      env: COMPILER=g++-8 CXXSTD=14      
+      env: COMPILER=g++-8 CXXSTD=14
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
@@ -178,6 +188,7 @@ matrix:
              - libc++-dev
       env: COMPILER=clang++-3.5 CXXSTD=14
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
@@ -188,6 +199,7 @@ matrix:
              - libc++-dev
       env: COMPILER=clang++-3.6 CXXSTD=14
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
@@ -198,10 +210,11 @@ matrix:
              - libc++-dev
       env: COMPILER=clang++-3.7 CXXSTD=14
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
-            - sourceline: "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-3.8 main"
+            - sourceline: "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-3.8 main"
               key_url: "http://apt.llvm.org/llvm-snapshot.gpg.key"
             - ubuntu-toolchain-r-test
           packages:
@@ -209,10 +222,11 @@ matrix:
              - libc++-dev
       env: COMPILER=clang++-3.8 CXXSTD=14
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
-            - sourceline: "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-3.9 main"
+            - sourceline: "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-3.9 main"
               key_url: "http://apt.llvm.org/llvm-snapshot.gpg.key"
             - ubuntu-toolchain-r-test
           packages:
@@ -220,41 +234,44 @@ matrix:
             - libc++-dev
       env: COMPILER=clang++-3.9 CXXSTD=14
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
-             - llvm-toolchain-xenial-4.0
+             - llvm-toolchain-bionic-4.0
              - ubuntu-toolchain-r-test
           packages:
              - clang++-4.0
              - libc++-dev
       env: COMPILER=clang++-4.0 CXXSTD=14
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
-             - llvm-toolchain-xenial-5.0
+             - llvm-toolchain-bionic-5.0
              - ubuntu-toolchain-r-test
           packages:
              - clang++-5.0
              - libc++-dev
-      env: COMPILER=clang++-5.0 CXXSTD=14      
+      env: COMPILER=clang++-5.0 CXXSTD=14
     - compiler: clang
+      if: branch =~ /all/
       addons:
         apt:
           sources:
-             - llvm-toolchain-xenial-6.0
+             - llvm-toolchain-bionic-6.0
              - ubuntu-toolchain-r-test
           packages:
              - clang++-6.0
              - libc++-dev
-      env: COMPILER=clang++-6.0 CXXSTD=14      
-      
+      env: COMPILER=clang++-6.0 CXXSTD=14
+
 before_install:
   - sudo apt update
-  - sudo apt install -y apt-transport-https ca-certificates gnupg software-properties-common 
+  - sudo apt install -y apt-transport-https ca-certificates gnupg software-properties-common
   - curl -L https://apt.kitware.com/keys/kitware-archive-latest.asc | sudo apt-key add -
-  - sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ xenial main' 
+  - sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
   - sudo apt update
 
 install:
